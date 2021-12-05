@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoAPI';
 import { Cryptocurrencies, News } from '.';
+import Loader from './Loader';
 
 const { Title } = Typography;
 
@@ -13,7 +14,7 @@ const Homepage = () => {
     const globalStats = data?.data?.stats;
     // console.log(data);
 
-    if(isFetching) return 'Loading..';
+    if(isFetching) return <Loader />;
     
     return (
         <>
